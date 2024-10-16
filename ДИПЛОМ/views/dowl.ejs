@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка</title>
+    <link rel="icon" href="karty/logo.png" type="image/x-icon">
+    <link href="css/menu.css" rel="stylesheet" type="text/css">
+    <link href="css/dowlstl.css" rel="stylesheet" type="text/css">
+    <script src="code.js"></script>
+    <script src="serv.js"></script>
+</head>
+<body>
+    <div class="container">
+    <div class="nav ">
+        <nav class="top-menu">
+           <ul class="menu-main">
+            <li class="left-item"><a  href="/" class="a1"><img src="/karty/logo.png"alt="екг" id="amore"></a></li>
+              <li class="right-item"><a href="/analys">Анализ</a></li>
+              <li class="right-item"><a id="tr">Загрузка</a></li>
+              <li class="right-item"><a href="/teor">Теория</a></li>
+          </ul>
+          </nav>
+</div>
+<div class="prin">
+  <p>
+   
+   <h3>Пожалуйста, внимательно прочитайте  инструкцию для корректной работы с сервисом</h3> 
+   Основные пункты:<br><br>
+   1. Формат загрузки файлов электрокариограмм: exsel файл (формат xlsx или svc), ограничения для исследования (50мм/с)<br><br>
+   2. За раз можно загрузить на сервер 1 файл, файл сохраняется с исходным названием<br><br>
+   3. После успешной загрузки файла вас перенаправит к результату анализа вашего файла
+    <p style="text-indent: 20px;">3.1 При возникновении ошибок загрузки повторите действие повторно </p>  
+   4. Если у вас нет доступных данных ЭКГ, вы можете выбрать из тестовых данных на странице анализа <br><br>
+  </p>
+</div>
+<div class="pfuh">
+<form class="f1" action="/upload" method="post" enctype="multipart/form-data">
+    <label>Файл</label><br>
+    <input type="file" name="data" id="data" required><br><br>
+    <input type="submit" id="i1" value="Сохранить файл ЭКГ">
+  </form>
+  
+</div>
+
+<div class="end">
+        При возникновении ошибок просьба связаться с нами
+    </div>
+</div>

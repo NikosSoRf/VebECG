@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Результаты</title>
+    <link href="css/analystyle.css" rel="stylesheet" type="text/css">
+    <link href="css/menu.css" rel="stylesheet" type="text/css">
+    <link href="css/accorst.css" rel="stylesheet" type="text/css">
+    <script src="js/code.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="/karty/logo.png" type="image/x-icon">
+</head>
+
+
+<script>
+    async function loadData1() {
+        const response = await fetch('/loadData1');
+        const data = await response.json();
+
+        const ctx = document.getElementById('myChart1').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map(item => item.x),
+                datasets: [{
+                    label: 'I отведение',
+                    data: data.map(item => item.y),
+                    borderColor: 'blue',
+                    //borderColor: 'red',
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+    loadData1();
+
+    async function loadData2() {
+        const response = await fetch('/loadData2');
+        const data = await response.json();
+
+        const ctx = document.getElementById('myChart2').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map(item => item.x),
+                datasets: [{
+                    label: 'II отведение',
+                    data: data.map(item => item.y),
+                    borderColor: 'blue',
+                    //borderColor: 'red',
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+    loadData2();
+
+    async function loadData3() {
+        const response = await fetch('/loadData3');
+        const data = await response.json();
+
+        const ctx = document.getElementById('myChart3').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map(item => item.x),
+                datasets: [{
+                    label: 'III отведение',
+                    data: data.map(item => item.y),
+                    borderColor: 'blue',
+                    //borderColor: 'red',
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+    loadData3();
+</script>
+<body>
+<div class="container">
+    <div class="nav">
+            <nav class="top-menu">
+                <ul class="menu-main">
+                <li class="left-item"><a href="/" class="a1"><img src="/karty/logo.png"alt="екг" style="padding: 2%; width:18%;"></a></li>
+                 
+                  <li class="right-item"><a href="/analys">Анализ</a></li>
+                  <li class="right-item"><a href="/dowl">Загрузка</a></li>
+                  <li class="right-item"><a href="/teor">Теория</a></li>
+              </ul>
+              </nav>
+              <a name="top"></a>
+    </div>
+    <div class="prin" style="text-align: center;">
+            <h3>Результат работы анализатора</h3> 
+            <p> В данном блоке будет представлены подробные результаты работы анализатора под результатом исследования графика.</p>
+    </div>
+    <div class="osn">
+     <!-- 
+        Зачем мне этот блок вообще, надо удалить или добавить контента
+     --> 
+    </div>
+    <div class="graf">
+       Отрисовка графика ЭКГ<br>
+  
+  <canvas id="myChart1"></canvas>
+  <canvas id="myChart2"></canvas>
+  <canvas id="myChart3"></canvas>
+    </div>
+
+
+    <div class="prim">
+<p>
+    Примеры атипичных графиков электрокардиограмм:<br>
+</p>
+        <div class="acor-container">          
+            
+            <input type="checkbox" name="chacor" id="chacor1">
+            <label for="chacor1">Инсульт</label>
+            <div class="acor-body">
+                <p>Острое нарушение кровообращения головного мозга, которое сопровождается закупоркой (ишемическая форма) либо разрывом (геморрагическая форма) сосудов. Без насыщенной кислородом крови, переносимой артериями, клетки мозга отмирают, а поврежденный участок больше не может нормально функционировать.</p>
+                <img src="karty\инсульт.png"alt="Инсульт" style="float: right;">
+                <p>
+                   Причиной может быть закупорка сосуда тромбом или бляшкой из других артерий и нарушение свёртывающей способности крови.
+                </p>
+                <p>Врачи выделяют ряд симптомов инсульта, к основным из которых относят:
+                    <p><ul>
+                        <li>снижение двигательной активности вплоть до полного прекращения движения рук или ног</li><br>
+                        <li>нарушение чувствительности, в ходе которого наблюдается снижение восприятия температуры, боли и т. п.</li><br>
+                        <li>невозможность сохранения вертикального положения (пациент качается и даже может упасть)</li><br>
+                        <li>нарушение речи (нечеткое и невнятное произношение, полная невозможность говорить)</li><br>
+                        <li> сонливость</li><br>
+                        <li>потеря сознания</li><br>
+                    </ul>
+                </p>
+            </div>
+            
+            <input type="checkbox" name="chacor" id="chacor2" />
+            <label for="chacor2">Стенокардия</label>
+            <div class="acor-body">
+                <img src="karty\steno.jpg"alt="Стенокардия" style="float: right;">
+                <p>
+                    Форма ишемической болезни сердца. Главной причиной заболевания является атеросклероз артерий сердца, из-за которого просвет сердечных сосудов сужается атеросклеротическими бляшками. В результате к сердцу поступает недостаточное количество крови, и оно испытывает кислородное голодание.
+                </p>
+               
+                <p>
+                    Существуют следующие формы стенокардии:
+                    <ul>
+                        <li>стабильная (стенокардия напряжения и покоя)</li><br>
+                        <li> нестабильная(впервые возникшая и прогрессирующая)</li><br>
+                        <li>вариантная</li><br>
+                    </ul>
+                   Отдельно выделяют впервые возникшую стенокардию, которая всегда требует госпитализации и наблюдения в отделении неотложной кардиологии в связи с высоким риском развития инфаркта миокарда.
+                Наиболее встречаемая форма - стенокардия напряжения. Приступы боли при этой форме начинаются под нагрузкой: в период ходьбы, работы, бега, в случае стресса.
+                </p>
+                <p>ЭКГ фиксирует изменения в сердце в момент приступов и поэтому является рутинным методом. Стенокардия не определяется с помощью УЗИ сердца и анализа крови.
+                    Наиболее распространенный метод – нагрузочные пробы (велоэргометрия или тредмил-тест). Пациент должен выполнять работу – идти по дорожке или крутить педали велоэргометра, а с помощью прибора идет регистрация показателей электрокардиограммы(ЭКГ). Если во время нагрузки возникает болевой приступ, сопровождающийся изменениями на ЭКГ, то проба – считается положительной.</p>
+            </div>
+            
+            <input type="checkbox" name="chacor" id="chacor3" />
+            <label for="chacor3">Ишемия</label>
+            <div class="acor-body">
+                <img src="karty\ишемия_миокарда.jpg"alt="Ишемия" style="float: right; width: 40%;">
+                <p>Функциональное и органическое поражение миокарда. Заболевание вызывается гипоксией (кислородным голоданием) сердечной мышцы, которая возникает на фоне уменьшения или полного прекращения поступления к ней крови. Ишемия может проявляться хроническими (постинфарктный кардиосклероз, сердечная недостаточность) или острыми состояниями.</p>
+                <p>В зависимости от того, какой орган затронут, выделяют следующие виды ишемий:
+                    <ul>
+                        <li>Ишемия головного мозга.</li><br>
+                            <li>Ишемия нижних и верхних конечностей.</li><br>
+                            <li>Ишемическая болезнь сердца (ИБС).</li>
+                    </ul></p>
+                    <p>
+                        Для ИБС характерны следующие симптомы: одышка (в тяжёлых формах – и в движении, и в спокойном положении, при развивающихся, хронических формах – в движении), учащённое сердцебиение, сбои в ритме сердца, «скачки» артериального давления, боли за грудиной, боль в области сердца.
+                    </p>
+            </div>
+            <input type="checkbox" name="chacor" id="chacor4" />
+            <label for="chacor4">Мерцательная аритмия</label>
+            <div class="acor-body">
+                <img src="karty\мерцательное.jpg"alt="Мерцание" style="float: right;">
+              <p>Мерцательная аритмия, или фибрилляция предсердий (ФП) – одна из самых распространенных форм нарушения сердечного ритма. Отличается быстрыми и нерегулярными сокращениями сердца. Пульс возрастает до 300 уд/мин и больше. Частые приступы грозят образованием тромбозов и приводят к инсультам. В зону риска попадают люди преклонного возраста, в большей степени женщины.</p>
+            <p>При обращении к врачу пациенты отмечают:
+                <ul>
+                    <li> учащенное сердцебиение</li><br>
+                    <li>боли в груди</li><br>
+                    <li>одышка при физических нагрузках</li><br>
+                    <li>нехватка воздуха, удушье</li><br>
+                    <li>головокружение и потеря сознания</li><br>
+                </ul>
+            </p>
+            <p>
+                Мерцательная аритмия (фибрилляция предсердий) может быть приступообразной или хронической. Если приступы аритмии (пароксизмы) длятся недолго (от нескольких минут до 7 дней) и нормальный ритм восстанавливается самопроизвольно, такая форма фибрилляции предсердий называется пароксизмальной.
+            </p>
+            </div>
+        </div>
+            
+        </div>
+
+    <div class="rez">
+        Результат исследования, возможно на отдельной странице<br>
+        Данный тестовый график ЭКГ, основываясь на методике диагностирования ССЗ  деревом решений :<br><br><br>
+         <%= data.stat %><br><br>
+</body>
+    </div>
+    <div class="end">
+        При возникновении ошибок просьба связаться с нами
+    </div>
+</div>
+<a href="#top" id="back-to-top" class="back-to-top" title="Back to top">▲</a>
+</body>

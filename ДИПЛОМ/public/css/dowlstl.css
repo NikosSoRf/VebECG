@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+div {
+    padding-bottom: 2%;
+  }
+  #amore{
+    padding: 2%; 
+    width:18%;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit 6, 1fr);
+    grid-template-rows: repeat(auto-fit 8,1fr);
+    /*auto-fill или auto-fit  в рипит*/
+    background-color: rgb(133, 216, 188);
+  }
+  .nav{
+    grid-column: 1/7;
+    grid-row: 1/2;
+    background-color: rgb(255, 255, 255);
+    margin-left: 8%;
+    margin-right: 8%;
+    border-radius: 15px;
+    margin-top: 2%;
+    padding-bottom: 0;
+  }
+  .prin{
+    grid-column: 1/7;
+    grid-row: 2/3;
+    background-color: rgb(255, 255, 255);
+    margin-left: 8%;
+    margin-right: 8%;
+    border-radius: 15px;
+    margin-top: 2%;
+    padding-left: 2%;
+  }
+  .pfuh{
+    grid-column: 1/7;
+    grid-row: 3/5;
+    background-color: rgb(255, 255, 255);
+    margin-left: 8%;
+    margin-right: 8%;
+    border-radius: 15px;
+    margin-top: 2%;
+  }
+
+  .end{
+    grid-column: 1/7;
+    grid-row: 5/6;
+    background-color: rgb(133, 216, 188);
+    text-align: center;
+    padding: 2%;
+  }
+  .f1{
+    margin-left: 30%;
+    margin-top: 2%;
+    width: 40%;
+    text-align: center;
+  }
+#i1{
+    width: 50%;
+    background-color: rgb(98, 146, 130);
+    border-radius: 35px;
+    height: 60px;
+  }
+  #i1:hover{
+    background-color: rgb(133, 216, 188);
+  }
+
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px){
+   nav{
+    margin-top: -20%;
+   }
+   #amore{
+    width: 35%;
+   }
+  
+   .prin{
+    font-size: smaller;
+    padding-left: 5%;
+    padding-right: 3%;
+   }
+   #i1{
+    width: 150%;
+    background-color: rgb(98, 146, 130);
+    border-radius: 25px;
+    height: 80px;
+    margin-left: -20%;
+  }
+  #data{
+    margin-left: -30%;
+  }
+  }

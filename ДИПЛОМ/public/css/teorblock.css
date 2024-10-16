@@ -1,0 +1,60 @@
+.tabs {
+    width: 100%;
+    padding: 0px;
+    margin: 0 auto; 
+    grid-column: 1/7;
+    grid-row: 2/4;
+  }
+  
+  
+  /* стили вкладок (табов) */
+  .tabs label {
+    display: table-cell;
+    width:2%;
+    height:30px;
+    margin: 0 0 -1px;
+    padding: 15px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align:middle;
+    color: #585858;
+    background: #32ccbf;
+
+  }
+
+  /* изменения стиля заголовков вкладок при наведении */
+  .tabs label:hover {
+    color: #000000;
+   cursor: pointer;
+  }
+  /* стили для активной вкладки */
+  .tabs input:checked + label {
+    color: #0a043a;
+    background: #fff;
+  }
+  
+  .tabs input:checked + label > div:after {
+    content: '';
+    position: absolute;
+    margin-left:-15px;
+    border-top-color: #292929;
+   }
+  
+  /* активация секций с помощью переключателя :checked */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4 {
+    display: block;
+  }
+  
+  /* стили секций с содержанием */
+  section {
+    display: none;
+    padding: 15px;
+    background: #fff;
+  }
+  .tabs input {
+    display: none;
+  }
